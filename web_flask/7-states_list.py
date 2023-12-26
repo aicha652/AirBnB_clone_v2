@@ -10,7 +10,7 @@ app = Flask(__name__)
 def state_funct():
     """define state_funct function"""
     states = models.storage.all(State)
-    render_template("7-states_list.html", states=states)
+    return render_template("7-states_list.html", states=states)
 
 
 @app.teardown_appcontext

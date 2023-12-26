@@ -8,8 +8,14 @@ app = Flask(__name__)
 @app.route("/states_list", strict_slashes=False)
 def state_funct():
     """define state_funct function"""
-    states = storage.all(State).order_by(State.name)
+    states = storage.all(State)
     render_template("7-states_list.html", states=states)
+
+
+@app.teardown_appcontext
+def teardown_funct():
+    """Define a teardown_funct"""
+    storage.close()
 
 
 if __name__ == '__main__':

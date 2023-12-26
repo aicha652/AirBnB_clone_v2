@@ -16,7 +16,7 @@ def state_funct():
 @app.teardown_appcontext
 def teardown_funct(self):
     """Define a teardown_funct"""
-    self.storage.close()
+    storage.close()
 
 
 if __name__ == '__main__':

@@ -23,7 +23,8 @@ def hbnb():
         state.cities = sorted([city for city in storage.all(City).values()
                                if city.state_id == state.id], key=lambda
                               city:  city.name)
-    return render_template("100-hbnb.html", places=places, amenities=amenities, states=states)
+    return render_template("100-hbnb.html", places=places,
+                           amenities=amenities, states=states)
 
 
 @app.teardown_appcontext

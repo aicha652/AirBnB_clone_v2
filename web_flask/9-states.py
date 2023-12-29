@@ -24,6 +24,7 @@ def states_cities(id):
                                    if city.state_id == state.id],
                                   key=lambda city: city.name)
             all_state = state
+            break
         else:
             all_state = None
     return render_template("9-states.html", id=id, all_state=all_state)
